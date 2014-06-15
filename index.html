@@ -1,110 +1,166 @@
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Диплом</title>
     <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="main.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script type='text/javascript' src='js/bootstrap.js'></script>
-    <script type='text/javascript' src='underscore.js'></script>
-
 </head>
 <body>
 
-<ul class="nav nav-tabs" id="myTab">
-    <li><a href="#clients" data-toggle="tab">Clients</a></li>
-    <li><a href="#coaches" data-toggle="tab">Coaches</a></li>
-    <li><a href="#admins" data-toggle="tab">Admins</a></li>
-</ul>
+<div class="navbar-wrapper">
 
-<div class="tab-content">
-    <div class="tab-pane" id="coaches">
-        <table class="table" id="coaches-list"></table>
-        <form class="navbar-form pull-left" id="newCoachForm">
-            <input type='text' id='coachNameInput' placeholder="Name"><br>
-            <input type='text' id='coachSurnameInput' placeholder="Surname"><br>
-            <input type='text' id='coachSalaryInput' placeholder="Salary"><br>
-            <input type='text' id='coachPhoneInput' placeholder="Phone"><br>
-            <input type="text" class="span2" placeholder="example@gmail.com" id="coachEmailInput"><br>
-            <input type='password' id='coachPassInput' placeholder="Password"><br>
-            <button class="btn" id="new-coach-button">Add coach</button>
-        </form>
-    </div>
-    <div class="tab-pane" id="clients">
-        <table class="table" id="clients-list"></table>
-        <form class="navbar-form pull-left" id="newUserForm">
-            <input type='text' id='nameInput' placeholder="Name"><br>
-            <input type='text' id='surnameInput' placeholder="Surname"><br>
-            <input type='text' id='ageInput' placeholder="Age"><br>
-            <input type='text' id='phoneInput' placeholder="Phone"><br>
-            <input type="text" class="span2" placeholder="example@gmail.com" id="emailInput"><br>
-            <input type='password' id='passInput' placeholder="Password"><br>
-            <input type="button"  value="Регистрация" onclick="location.href='https://podviaznikov.firebaseapp.com/sign_up.html'" />
-            <button class="btn" id="new-user-button">Sign up</button>
-        </form>
+    <div class="container">
+        <div class="navbar navbar-inverse">
+            <div class="navbar-inner">
+                <a class="brand">Дипломная работа</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="index.html">Главная</a></li>
+                        <li class="dropdown">
+                            <a href="about.html" class="dropdown-toggle" data-toggle="dropdown">О клубе<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="clubnews.html">Новости</a></li>
+                                <li><a href="clubgallery.html">Галерея</a></li>
+                                <li><a href="clubcontacts.html">Контакты</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="shedule.html">Расписание занятий</a></li>
+                        <li class="dropdown">
+                            <a href="services.html" class="dropdown-toggle" data-toggle="dropdown">Услуги<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="gym.html">Тренажерный зал</a></li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="grouptraining.html">Групповые занятия</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="strengthtraining.html">Силовое направление</a></li>
+                                        <li><a href="fittraining.html">Аэробное направление</a></li>
+                                        <li><a href="dancetraining.html">Танцевальное направление</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="clubtennis.html">Теннис</a></li>
+                                <li><a href="clubpool.html">Бассейн</a></li>
+                                <li><a href="massage.html">Массаж</a></li>
+                                <li><a href="spa.html">Солярий</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="prices.html" class="dropdown-toggle" data-toggle="dropdown">Цены<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="adservprices.html">Цены на доп. услуги</a></li>
+                                <li><a href="seasonticketprices.html">Цены на абонимент</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="sign_in.html">Кабинет</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
+<div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="1.jpg" alt="">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Example headline.</h1>
+                    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <a class="btn btn-large btn-primary" href="#">Sign up today</a>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="2.jpg" alt="">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Another example headline.</h1>
+                    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <a class="btn btn-large btn-primary" href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="3.jpg" alt="">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>One more for good measure.</h1>
+                    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
 
 
+<div class="container marketing">
 
-<script type="text/javascript">
+    <div class="row">
+        <div class="span4">
+            <img class="img-circle" data-src="holder.js/140x140">
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+            <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+        <div class="span4">
+            <img class="img-circle" data-src="holder.js/140x140">
+            <h2>Heading</h2>
+            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+        <div class="span4">
+            <img class="img-circle" data-src="holder.js/140x140">
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+    </div>
 
-    var coaches = new Firebase('https://podviaznikov.firebaseIO.com/coaches');
-    coaches.on('value', function(snapshot) {
-        var allCoaches = snapshot.val();
-        //console.log('all coaches', allCoaches, allCoaches[1])
-        var html = '';
-        _.each(allCoaches, function(coach){
-            console.log('coach', coach);
-            html+= "<tr>" + "<td>" + coach.name + "</td>" + "<td>" + coach.surname + "</td>" + "</tr>";
-        });
-        console.log('html', html);
-        document.getElementById('coaches-list').innerHTML = html;
-    });
-
-    var clients = new Firebase('https://podviaznikov.firebaseIO.com/clients');
-    clients.on('value', function(snapshot) {
-        var allClients = snapshot.val();
-        var html = '';
-        _.each(allClients, function(client){
-            html+= "<tr>" + "<td>" + client.name + "</td>" + "<td>" + client.surname + "</td>" + "</tr>";
-        });
-        console.log('html', html);
-        document.getElementById('clients-list').innerHTML = html;
-    });
-
-    $('#myTab a').click(function (e) {
-        e.preventDefault();
-        $(this).tab('show');
-    })
-
-
-    $('#new-user-button').on('click', function(){
-        var name= $('#nameInput').val();
-        var surname = $('#surnameInput').val();
-        var age = $('#ageInput').val();
-        var email= $('#emailInput').val();
-        var phone = $('#phoneInput').val();
-        var pass = $('#passInput').val();
-        var users = new Firebase('https://podviaznikov.firebaseIO.com/clients')
-        var newUserRef = users.push();
-        newUserRef.set({name: name, surname: surname, age: age, email: email, phone: phone, password: pass});
-    })
-
-    $('#new-coach-button').on('click', function(){
-        var name= $('#coachNameInput').val();
-        var surname = $('#coachSurnameInput').val();
-        var salary = $('#coachSalaryInput').val();
-        var email= $('#coachEmailInput').val();
-        var phone = $('#coachPhoneInput').val();
-        var pass = $('#coachPassInput').val();
-        var coaches = new Firebase('https://podviaznikov.firebaseIO.com/coaches')
-        var newCoachRef = coaches.push();
-        newCoachRef.set({name: name, surname: surname, salary: salary, email: email, phone: phone, password: pass});
-    })
+    <hr class="featurette-divider">
+    <div class="featurette">
+        <img class="featurette-image pull-right" src="../assets/img/examples/browser-icon-chrome.png">
+        <h2 class="featurette-heading">First featurette headling. <span class="muted">It'll blow your mind.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <hr class="featurette-divider">
+    <div class="featurette">
+        <img class="featurette-image pull-left" src="../assets/img/examples/browser-icon-firefox.png">
+        <h2 class="featurette-heading">Oh yeah, it's that good. <span class="muted">See for yourself.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <hr class="featurette-divider">
+    <div class="featurette">
+        <img class="featurette-image pull-right" src="../assets/img/examples/browser-icon-safari.png">
+        <h2 class="featurette-heading">And lastly, this one. <span class="muted">Checkmate.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <hr class="featurette-divider">
 
 
-</script>
+    <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2012 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+</div>
+
+<script type="text/rocketscript">
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
 </body>
 </html>

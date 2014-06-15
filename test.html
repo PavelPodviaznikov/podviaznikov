@@ -1,0 +1,110 @@
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type='text/javascript' src='js/bootstrap.js'></script>
+    <script type='text/javascript' src='underscore.js'></script>
+
+</head>
+<body>
+
+<ul class="nav nav-tabs" id="myTab">
+    <li><a href="#clients" data-toggle="tab">Clients</a></li>
+    <li><a href="#coaches" data-toggle="tab">Coaches</a></li>
+    <li><a href="#admins" data-toggle="tab">Admins</a></li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane" id="coaches">
+        <table class="table" id="coaches-list"></table>
+        <form class="navbar-form pull-left" id="newCoachForm">
+            <input type='text' id='coachNameInput' placeholder="Name"><br>
+            <input type='text' id='coachSurnameInput' placeholder="Surname"><br>
+            <input type='text' id='coachSalaryInput' placeholder="Salary"><br>
+            <input type='text' id='coachPhoneInput' placeholder="Phone"><br>
+            <input type="text" class="span2" placeholder="example@gmail.com" id="coachEmailInput"><br>
+            <input type='password' id='coachPassInput' placeholder="Password"><br>
+            <button class="btn" id="new-coach-button">Add coach</button>
+        </form>
+    </div>
+    <div class="tab-pane" id="clients">
+        <table class="table" id="clients-list"></table>
+        <form class="navbar-form pull-left" id="newUserForm">
+            <input type='text' id='nameInput' placeholder="Name"><br>
+            <input type='text' id='surnameInput' placeholder="Surname"><br>
+            <input type='text' id='ageInput' placeholder="Age"><br>
+            <input type='text' id='phoneInput' placeholder="Phone"><br>
+            <input type="text" class="span2" placeholder="example@gmail.com" id="emailInput"><br>
+            <input type='password' id='passInput' placeholder="Password"><br>
+            <input type="button"  value="Регистрация" onclick="location.href='https://podviaznikov.firebaseapp.com/sign_up.html'" />
+            <button class="btn" id="new-user-button">Sign up</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+    var coaches = new Firebase('https://podviaznikov.firebaseIO.com/coaches');
+    coaches.on('value', function(snapshot) {
+        var allCoaches = snapshot.val();
+        //console.log('all coaches', allCoaches, allCoaches[1])
+        var html = '';
+        _.each(allCoaches, function(coach){
+            console.log('coach', coach);
+            html+= "<tr>" + "<td>" + coach.name + "</td>" + "<td>" + coach.surname + "</td>" + "</tr>";
+        });
+        console.log('html', html);
+        document.getElementById('coaches-list').innerHTML = html;
+    });
+
+    var clients = new Firebase('https://podviaznikov.firebaseIO.com/clients');
+    clients.on('value', function(snapshot) {
+        var allClients = snapshot.val();
+        var html = '';
+        _.each(allClients, function(client){
+            html+= "<tr>" + "<td>" + client.name + "</td>" + "<td>" + client.surname + "</td>" + "</tr>";
+        });
+        console.log('html', html);
+        document.getElementById('clients-list').innerHTML = html;
+    });
+
+    $('#myTab a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    })
+
+
+    $('#new-user-button').on('click', function(){
+        var name= $('#nameInput').val();
+        var surname = $('#surnameInput').val();
+        var age = $('#ageInput').val();
+        var email= $('#emailInput').val();
+        var phone = $('#phoneInput').val();
+        var pass = $('#passInput').val();
+        var users = new Firebase('https://podviaznikov.firebaseIO.com/clients')
+        var newUserRef = users.push();
+        newUserRef.set({name: name, surname: surname, age: age, email: email, phone: phone, password: pass});
+    })
+
+    $('#new-coach-button').on('click', function(){
+        var name= $('#coachNameInput').val();
+        var surname = $('#coachSurnameInput').val();
+        var salary = $('#coachSalaryInput').val();
+        var email= $('#coachEmailInput').val();
+        var phone = $('#coachPhoneInput').val();
+        var pass = $('#coachPassInput').val();
+        var coaches = new Firebase('https://podviaznikov.firebaseIO.com/coaches')
+        var newCoachRef = coaches.push();
+        newCoachRef.set({name: name, surname: surname, salary: salary, email: email, phone: phone, password: pass});
+    })
+
+
+</script>
+</body>
+</html>
